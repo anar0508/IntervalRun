@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">IntervalRun</string>
+    <string name="your_training_cycles">Твои тренировочные циклы</string>
+    <string name="start_cycle">Начать цикл</string>
+    <string name="edit_cycle">Редактировать цикл</string>
+    <string name="delete_cycle">Удалить цикл</string>
+</resources>
