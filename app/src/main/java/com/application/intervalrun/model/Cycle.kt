@@ -3,10 +3,10 @@ package com.application.intervalrun.model
 import com.application.intervalrun.enums.CycleState
 
 
-open class Cycle(open val cycleName: String) {
+open class Cycle(open val cycleName: String, open val cycleId: Long) {
 
 }
-class UserCycle (override var cycleName: String, private var timers: MutableList<Timer>): Cycle(cycleName) {
+class UserCycle (override var cycleName: String, override val cycleId: Long, private var timers: MutableList<Timer>): Cycle(cycleName, cycleId) {
     private var cycleState: CycleState = CycleState.STOPPED;
 
     fun startCycle() {
@@ -22,12 +22,12 @@ class UserCycle (override var cycleName: String, private var timers: MutableList
     }
 
     fun convertToTemplateCycle(templateCycleName: String): TemplateCycle {
-        return TemplateCycle(cycleName= templateCycleName, timers = timers.toTypedArray())
+        return TemplateCycle(cycleName= templateCycleName, cycleId = 12415515, timers = timers.toTypedArray())
     }
 
 }
 
-data class TemplateCycle (override val cycleName: String, val timers: Array<Timer>) : Cycle(cycleName) {
+data class TemplateCycle (override val cycleName: String, override val cycleId: Long, val timers: Array<Timer>) : Cycle(cycleName, cycleId) {
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
         if (javaClass != other?.javaClass) return false
