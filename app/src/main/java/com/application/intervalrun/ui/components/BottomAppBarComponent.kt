@@ -40,9 +40,6 @@ fun BottomAppBarComponent (navigateTo: (routePath: String)-> Unit, currentScreen
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
-            Log.d("MainActivity", "BottomAppBarComponent currentScreenName: $currentScreenName" )
-            Log.d("MainActivity", "BottomAppBarComponent AppScreens.UserCycles.name: ${AppScreens.UserCycles.name}" )
-            Log.d("MainActivity", "BottomAppBarComponent AppScreens.UserCycles.name: ${AppScreens.ActiveTimer.name}" )
             IconButton(onClick = { navigateTo(AppScreens.UserCycles.name) }) {
                 Icon(
                     if(currentScreenName == AppScreens.UserCycles.name) {
