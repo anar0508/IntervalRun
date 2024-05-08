@@ -11,5 +11,5 @@ enum class AppScreens(@StringRes val title: Int) {
     Logs(title = R.string.logs),
     Settings(title = R.string.settings),
     NewCycle(title = R.string.new_cycle),
-    ActiveTimer(title = R.string.active_timer)
+    ActiveInterval(title = R.string.active_interval)
 }

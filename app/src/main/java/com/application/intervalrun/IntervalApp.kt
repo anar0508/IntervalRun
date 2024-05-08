@@ -1,13 +1,7 @@
 package com.application.intervalrun
 
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Add
-import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.FloatingActionButton
-import androidx.compose.material3.Icon
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -15,7 +9,6 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
@@ -23,8 +16,6 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.application.intervalrun.enums.AppScreens
-import com.application.intervalrun.ui.components.BottomAppBarComponent
-import com.application.intervalrun.ui.components.TopAppBarComponent
 import com.application.intervalrun.ui.screens.editCycleScreenUI.EditCycleScreen
 import com.application.intervalrun.ui.screens.userCyclesScreenUI.UserCyclesScreen
 
@@ -76,11 +67,11 @@ fun IntervalRunApp(
                     Text(text = stringResource(R.string.wearables), fontSize = 24.sp)
                 }
             }
-            composable(route = AppScreens.ActiveTimer.name) {
+            composable(route = AppScreens.ActiveInterval.name) {
                 Column(
                     modifier = Modifier,
                 ) {
-                    Text(text = stringResource(R.string.active_timer), fontSize = 24.sp)
+                    Text(text = stringResource(R.string.active_interval), fontSize = 24.sp)
                 }
             }
             composable(route = AppScreens.NewCycle.name) {

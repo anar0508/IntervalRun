@@ -2,7 +2,7 @@ package com.application.intervalrun.ui.screens.editCycleScreenUI
 
 import com.application.intervalrun.data.entities.TrainingCycle
 import com.application.intervalrun.enums.CycleState
-import com.application.intervalrun.model.Timer
+import com.application.intervalrun.model.Interval
 
 
 data class EditTrainingCycleUiState(
@@ -13,13 +13,13 @@ data class UserTrainingCycleDetails(
     val name: String = "",
     val cycleState: CycleState = CycleState.STOPPED,
     val isTemplate: Boolean = false,
-    val timers: MutableList<Timer> = mutableListOf(),
+    val intervals: MutableList<Interval> = mutableListOf(),
     val id: Int = 0
 )
 
 fun UserTrainingCycleDetails.toUserTrainingCycle(): TrainingCycle = TrainingCycle(
     cycleName = name,
-    timers = timers,
+    intervals = intervals,
     cycleState = cycleState,
     uid = id,
     isTemplate = false
@@ -27,7 +27,7 @@ fun UserTrainingCycleDetails.toUserTrainingCycle(): TrainingCycle = TrainingCycl
 
 fun TrainingCycle.toUserTrainingCycleDetails(): UserTrainingCycleDetails = UserTrainingCycleDetails(
     name = cycleName,
-    timers = timers?: mutableListOf(),
+    intervals = intervals?: mutableListOf(),
     cycleState = cycleState,
     id = uid
 )

@@ -20,6 +20,7 @@ fun TopAppBarComponent(
     appBarText: String,
     goingBackEnabled: Boolean = false,
     navigateUp: () -> Unit = {},
+    actions: @Composable () -> Unit = {},
     modifier: Modifier = Modifier
 ) {
     TopAppBar(
@@ -39,6 +40,7 @@ fun TopAppBarComponent(
                     )
                 }
             }
-        }
+        },
+        actions = { actions() }
     )
 }

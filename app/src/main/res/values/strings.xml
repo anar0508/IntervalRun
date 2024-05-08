@@ -9,9 +9,11 @@
     <string name="logs">Training logs</string>
     <string name="settings">Settings</string>
     <string name="new_cycle">New training cycle</string>
-    <string name="active_timer">Active Timer</string>
+    <string name="active_interval">Active Interval</string>
     <string name="training_cycle">Training Cycle</string>
     <string name="to_previous_screen">To previous screen</string>
     <string name="cycle_name">Cycle name</string>
-    <string name="timer_name">Timer name</string>
+    <string name="interval_name">Interval name</string>
+    <string name="interval_duration">Interval duration</string>
+    <string name="interval_type">Interval type</string>
 </resources>

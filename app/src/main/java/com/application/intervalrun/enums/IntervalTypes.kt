@@ -1,0 +1,28 @@
+package com.application.intervalrun.enums
+
+enum class IntervalTypes {
+    REST,
+    RUNNING,
+    WALKING,
+    CYCLING,
+    SWIMMING,
+    ROWING,
+    SKIING,
+    SKATING,
+    JUMPING,
+    CLIMBING,
+    DANCING,
+    YOGA,
+    STRETCHING,
+    WEIGHTLIFTING,
+    CALISTHENICS,
+    MARTIAL_ARTS,
+    BOXING,
+    MMA,
+    CROSSFIT,
+    PILATES,
+    BARRE,
+    SPINNING,
+    ZUMBA,
+    AEROBICS,
+}

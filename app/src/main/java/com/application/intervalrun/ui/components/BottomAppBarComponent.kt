@@ -1,6 +1,5 @@
 package com.application.intervalrun.ui.components
 
-import android.util.Log
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -52,15 +51,15 @@ fun BottomAppBarComponent (navigateTo: (routePath: String)-> Unit, currentScreen
                     )
                 )
             }
-            IconButton(onClick = { navigateTo(AppScreens.ActiveTimer.name) }) {
+            IconButton(onClick = { navigateTo(AppScreens.ActiveInterval.name) }) {
                 Icon(
-                    if(currentScreenName == AppScreens.ActiveTimer.name) {
+                    if(currentScreenName == AppScreens.ActiveInterval.name) {
                         Icons.Filled.Timer
                     } else {
                         Icons.Outlined.Timer
                     },
                     contentDescription = stringResource(
-                        id = R.string.active_timer
+                        id = R.string.active_interval
                     )
                 )
             }

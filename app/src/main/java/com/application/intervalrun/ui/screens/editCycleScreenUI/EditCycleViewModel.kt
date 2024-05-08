@@ -29,7 +29,6 @@ class EditCycleViewModel(
     }
 
     fun updateUiState(trainingCycleDetails: UserTrainingCycleDetails) {
-        Log.d(com.application.intervalrun.ui.screens.editCycleScreenUI.TAG, "updateUiState Called: ${trainingCycleDetails.name}")
         editTrainingCycleUiState =
             EditTrainingCycleUiState(trainingCycleDetails = trainingCycleDetails, isEntryValid = validateInput(trainingCycleDetails))
     }
@@ -40,9 +39,8 @@ class EditCycleViewModel(
         }
     }
     private fun validateInput(uiState: UserTrainingCycleDetails = editTrainingCycleUiState.trainingCycleDetails): Boolean {
-        Log.d(com.application.intervalrun.ui.screens.editCycleScreenUI.TAG, "validateInput Called: ${uiState.timers.size}")
         return with(uiState) {
-            name.isNotBlank() && timers.size != 0
+            name.isNotBlank() && intervals.size != 0
         }
     }
 
