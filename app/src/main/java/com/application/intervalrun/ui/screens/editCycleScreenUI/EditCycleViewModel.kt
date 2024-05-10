@@ -8,9 +8,13 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.application.intervalrun.data.repository.TrainingCycleRepository
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.filterNotNull
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+
+
 private const val TAG = "EditCycleViewModel"
 class EditCycleViewModel(
     savedStateHandle: SavedStateHandle,
@@ -35,7 +39,10 @@ class EditCycleViewModel(
 
     suspend fun saveItem() {
         if (validateInput()) {
-            trainingCycleRepository.insert(editTrainingCycleUiState.trainingCycleDetails.toUserTrainingCycle())
+            withContext(Dispatchers.IO) {
+                trainingCycleRepository.insert(editTrainingCycleUiState.trainingCycleDetails.toUserTrainingCycle())
+                Log.d(TAG, "${editTrainingCycleUiState.trainingCycleDetails}")
+            }
         }
     }
     private fun validateInput(uiState: UserTrainingCycleDetails = editTrainingCycleUiState.trainingCycleDetails): Boolean {
